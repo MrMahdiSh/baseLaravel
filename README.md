@@ -4,33 +4,34 @@ This is an open-source Laravel-based API project that provides a robust foundati
 
 ## Features
 
-- **JWT Authentication**: Secure your API endpoints using JSON Web Tokens (JWT) with the Spatie JWT package.
-- **Swagger API Documentation**: Automatically generate and serve API documentation using Spatie Swagger.
-- **RESTful API Structure**: Follows best practices for building scalable and maintainable APIs.
-- **Open Source**: Fully open-source and customizable to fit your project needs.
+-   **JWT Authentication**: Secure your API endpoints using JSON Web Tokens (JWT) with the Spatie JWT package.
+-   **Swagger API Documentation**: Automatically generate and serve API documentation using Spatie Swagger.
+-   **RESTful API Structure**: Follows best practices for building scalable and maintainable APIs.
+-   **Open Source**: Fully open-source and customizable to fit your project needs.
 
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
-- PHP >= 8.0
-- Composer
-- Laravel >= 9.x
-- MySQL or any other supported database
+-   PHP >= 8.0
+-   Composer
+-   Laravel >= 9.x
+-   MySQL or any other supported database
 
 ## Installation
 
 1. Clone the repository:
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/MrMahdiSh/baseLaravel
    cd your-repo-name
 
 2. Install dependencies:
    composer install
 
 3. Set up environment variables:
-   - Copy .env.example to .env:
-     cp .env.example .env
-   - Update .env with your database credentials and other settings.
+
+    - Copy .env.example to .env:
+      cp .env.example .env
+    - Update .env with your database credentials and other settings.
 
 4. Generate application key:
    php artisan key:generate
@@ -53,8 +54,8 @@ Before you begin, ensure you have the following installed:
 
 ## Usage
 
-- Access the API documentation by navigating to `/api/documentation` in your browser.
-- Use JWT tokens for authentication in your API requests.
+-   Access the API documentation by navigating to `/api/documentation` in your browser.
+-   Use JWT tokens for authentication in your API requests.
 
 ## Contributing
 
@@ -71,5 +72,5 @@ This project is open-source and available under the MIT License.
 
 ## Acknowledgments
 
-- Spatie for their excellent Laravel packages.
-- Laravel for the amazing PHP framework.
+-   Spatie for their excellent Laravel packages.
+-   Laravel for the amazing PHP framework.
