@@ -1,171 +1,75 @@
-Base Laravel API with JWT Authentication, Spatie Roles, and Swagger Documentation
-🚀 Project Overview
-Welcome to the Base Laravel API project! This is a robust foundation designed for developers who want to quickly build secure and scalable APIs. It comes with pre-configured JWT Authentication, Spatie Roles & Permissions, and Swagger API Documentation, so you can focus on building features without spending time on boilerplate setups.
+# Laravel API Project
 
-🛠 Features
-🔑 JWT Authentication
-Secure token-based authentication to protect API endpoints.
+This is an open-source Laravel-based API project that provides a robust foundation for building RESTful APIs. It includes integration with **Spatie JWT** for authentication and **Spatie Swagger** for API documentation.
 
-📝 User Registration & Login
-Allows users to create accounts and log in with JWT-based tokens.
+## Features
 
-📧 Email Verification
-Ensures that users verify their email before accessing the application.
+- **JWT Authentication**: Secure your API endpoints using JSON Web Tokens (JWT) with the Spatie JWT package.
+- **Swagger API Documentation**: Automatically generate and serve API documentation using Spatie Swagger.
+- **RESTful API Structure**: Follows best practices for building scalable and maintainable APIs.
+- **Open Source**: Fully open-source and customizable to fit your project needs.
 
-🔒 Spatie Roles & Permissions
-Easily manage user roles and permissions, defining who can access what.
+## Prerequisites
 
-📄 Swagger API Documentation
-Automatically generated API docs, making it easier for you and your team to understand and integrate with the API.
+Before you begin, ensure you have the following installed:
 
-⚡ Rate Limiting
-Built-in rate limiting to prevent abuse and ensure a smooth experience for all users.
+- PHP >= 8.0
+- Composer
+- Laravel >= 9.x
+- MySQL or any other supported database
 
-🔑 Password Reset
-Secure password reset functionality with email-based recovery.
+## Installation
 
-🌱 Fully Scalable
-This is a solid base, ready to be extended with new features as your project grows.
+1. Clone the repository:
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
 
-📋 Prerequisites
-Before getting started, make sure you have the following installed:
+2. Install dependencies:
+   composer install
 
-PHP 8.0+
-Composer
-MySQL or PostgreSQL (choose your preferred database)
-Laravel 9.x+
-Node.js (optional, if you're using front-end integration)
-⚙️ Installation Guide
-Step 1: Clone the repository
-Clone this repository to your local machine:
+3. Set up environment variables:
+   - Copy .env.example to .env:
+     cp .env.example .env
+   - Update .env with your database credentials and other settings.
 
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/laravel-api-base.git
-cd laravel-api-base
-Step 2: Install dependencies
-Run the following command to install all required PHP packages:
+4. Generate application key:
+   php artisan key:generate
 
-bash
-Copy
-Edit
-composer install
-Step 3: Configure environment variables
-Rename .env.example to .env and fill in the required configuration variables:
+5. Run migrations:
+   php artisan migrate
 
-bash
-Copy
-Edit
-cp .env.example .env
-Update the following in the .env file:
+6. Install Spatie JWT and Swagger packages:
+   composer require spatie/laravel-jwt
+   composer require spatie/laravel-swagger
 
-DB_CONNECTION (MySQL or PostgreSQL)
-DB_HOST
-DB_PORT
-DB_DATABASE
-DB_USERNAME
-DB_PASSWORD
-JWT-related settings (if needed)
-Step 4: Generate the application key
-Run the command to generate a secure application key:
+7. Publish Swagger configuration:
+   php artisan vendor:publish --provider="Spatie\Swagger\SwaggerServiceProvider"
 
-bash
-Copy
-Edit
-php artisan key:generate
-Step 5: Run database migrations
-Apply the migrations to create the necessary tables:
+8. Generate Swagger documentation:
+   php artisan swagger:generate
 
-bash
-Copy
-Edit
-php artisan migrate
-Step 6: Set up Swagger Documentation
-Generate Swagger documentation using the following command:
+9. Start the development server:
+   php artisan serve
 
-bash
-Copy
-Edit
-php artisan swagger-lume:generate
-You should now be able to access your API docs via /api/documentation.
+## Usage
 
-🚀 Usage
-Register a New User
-POST /api/register
+- Access the API documentation by navigating to `/api/documentation` in your browser.
+- Use JWT tokens for authentication in your API requests.
 
-Body:
-json
-Copy
-Edit
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "password123"
-}
-Log in and Get JWT Token
-POST /api/login
+## Contributing
 
-Body:
+Contributions are welcome! Please follow these steps:
 
-json
-Copy
-Edit
-{
-  "email": "john@example.com",
-  "password": "password123"
-}
-Response:
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Commit your changes.
+4. Submit a pull request.
 
-json
-Copy
-Edit
-{
-  "access_token": "your-jwt-token-here",
-  "token_type": "bearer"
-}
-Email Verification
-Once users register, they will receive a verification email. Ensure they verify their email before they can access protected routes.
+## License
 
-🛡 Security
-This base project focuses on providing secure authentication and authorization through:
+This project is open-source and available under the MIT License.
 
-JWT Authentication: All protected routes require a valid JWT token.
-Role-Based Access Control: Using Spatie's roles and permissions package, roles like 'admin', 'user', and custom roles can be easily assigned.
-Email Verification: Ensures that users have a valid email before accessing sensitive features.
-🧑‍🤝‍🧑 Contributing
-We encourage contributions! If you'd like to improve this project, feel free to fork it and submit a pull request.
+## Acknowledgments
 
-How to Contribute
-Fork the repository
-Create a new branch for your feature (git checkout -b feature-name)
-Make your changes and commit them (git commit -am 'Add new feature')
-Push your branch to your fork (git push origin feature-name)
-Open a Pull Request with a description of the changes
-🌍 API Documentation
-Access live API documentation powered by Swagger:
-
-bash
-Copy
-Edit
-http://localhost:8000/api/documentation
-This will give you full access to all available routes, authentication methods, and more!
-
-🛠 Tools and Technologies
-Laravel 9.x: PHP framework used for building this API.
-JWT: For secure, token-based authentication.
-Spatie: For role and permission management.
-Swagger: For auto-generating API documentation.
-Composer: PHP dependency manager.
-MySQL/PostgreSQL: Database options for your project.
-Rate Limiting: To protect against excessive API calls.
-📢 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-📝 Acknowledgments
-Spatie: For their amazing packages that make Laravel development smoother.
-Swagger: For providing a clear and simple way to document APIs.
-JWT: For making secure authentication easier.
-🤖 Support
-If you encounter any issues or have questions, feel free to open an issue or contact me directly.
-
+- Spatie for their excellent Laravel packages.
+- Laravel for the amazing PHP framework.
